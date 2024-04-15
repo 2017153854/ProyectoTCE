@@ -88,7 +88,6 @@ for i=1 : length(m_t_filtered)
     else
         s_t(i) = cos(2*pi*f_c1*t(i) + a*m_t_filtered(i));     %FSK para 1's
     end
-
 end
 %--------------------------------------------
 
@@ -123,7 +122,7 @@ title('Mensaje m(t) A La Salida Del Filtro Gaussiano');
 xlabel('Tiempo (s)');
 ylabel('Amplitud');
 
-subplot(3, 1, 3);     % Grafica de gaussian_filter
+subplot(3, 1, 3);     % Grafica de s_t
 plot(t, s_t);
 title('Senal Modulada s(t)');
 xlabel('Tiempo (s)');
