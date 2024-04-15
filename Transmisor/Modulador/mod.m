@@ -19,7 +19,7 @@
 
 %--------------------------------------------
 % INICIO TIEMPO DE EJECUCION:
-% El siguiente fragmento inicia el cronometro para medir el tiempo que dura la moduación
+% El siguiente fragmento inicia el cronometro para medir el tiempo que dura la moduacion
 %--------------------------------------------
 tic;     %Se inicia el temporizador
 %--------------------------------------------
@@ -46,7 +46,7 @@ f_s = 100;     %Frecuencia de sampleo
 t_b = 0.5;     %Tiempo de bit
 t = 0 : 1/f_s : (length(data)*t_b - 1/f_s);     %Tiempo 
 
-% Senal m(t) De Tipo NRZ Unipolar
+% Senal Mensaje m(t) De Tipo NRZ Unipolar
 m_t = [];      %Senal de mensaje m(t)
 i = 1; % Auxiliar
 while true
@@ -73,7 +73,7 @@ end
 sigma = 100;     %Desviacion Estandar del filtro
 gaussian_filter = gausswin(length(m_t), sigma);     %Ventana gaussiana
 
-%Aplicacion Del Filtro Gaussiano A Mensaje m(t)
+%Aplicacion Del Filtro Gaussiano Al Mensaje m(t)
 m_t_filtered = conv(m_t, gaussian_filter, 'same');
 
 %Modulacion FSK
@@ -97,15 +97,15 @@ end
 % FIN TIEMPO DE EJECUCION:
 % Aqui se contabiliza canto duro la modulacion
 %--------------------------------------------
-elapsedTime = toc;     %Se detiene el temporizador
-fprintf('La modulacion duro %.4f segundos.\n', elapsedTime);
+t_mod = toc;     %Se detiene el temporizador
+fprintf('La modulacion duro %.4f segundos.\n', t_mod);
 %--------------------------------------------
 
 
 
 %--------------------------------------------
-% VISUALIZACIÓN DE RESULTADOS:
-% A continuación se plotean las senales m_t (mensaje), 
+% VISUALIZACION DE RESULTADOS:
+% A continuacion se plotean las senales m_t (mensaje), 
 % m_t_filtered (senal a la salida del filtro gaussiano), s_t (senal modulada)
 %--------------------------------------------
 figure;      %Ventana
@@ -122,7 +122,7 @@ title('Mensaje m(t) A La Salida Del Filtro Gaussiano');
 xlabel('Tiempo (s)');
 ylabel('Amplitud');
 
-subplot(3, 1, 3);     % Grafica de s_t
+subplot(3, 1, 3);     % Grafica de gaussian_filter
 plot(t, s_t);
 title('Senal Modulada s(t)');
 xlabel('Tiempo (s)');
