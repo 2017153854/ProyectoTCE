@@ -16,6 +16,16 @@
 %--------------------------------------------
 
 
+
+%--------------------------------------------
+% INICIO TIEMPO DE EJECUCION:
+% El siguiente fragmento inicia el cronometro para medir el tiempo que dura la moduación
+%--------------------------------------------
+tic;     %Se inicia el temporizador
+%--------------------------------------------
+
+
+
 %--------------------------------------------
 % DATO O SYMBOLO DE PRUEBA:
 % Se tomara una cadena aleatoria de bits para comparar
@@ -80,6 +90,16 @@ for i=1 : length(m_t_filtered)
     end
 
 end
+%--------------------------------------------
+
+
+
+%--------------------------------------------
+% FIN TIEMPO DE EJECUCION:
+% Aqui se contabiliza canto duro la modulacion
+%--------------------------------------------
+elapsedTime = toc;     %Se detiene el temporizador
+fprintf('La modulacion duro %.4f segundos.\n', elapsedTime);
 %--------------------------------------------
 
 
